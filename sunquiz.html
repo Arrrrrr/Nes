@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>That's no moon</title>
+		<link rel="stylesheet" type="text/css" href="n_style.css">
+		<!-- Metadata to display Hebrew font -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<!-- Begin JavaScript for Quiz -->
+		
+		<script>
+			// support for an up to 50 question quiz
+			var items = new Array (50) 
+			var done = new Array (50) 
+			for (var i = 0; i <= 49; i++){
+				items[i] = 0;
+				done[i] = 0;
+			}
+		</script>
+		<script>
+			function gradeSunQuiz() { 
+				var calculateSunQuiz = 0 
+				var limitSunQuiz = 0 
+				// loop through the actual number of questions in the quiz, in
+				// this case, it is 13
+				for (var i = 1; i <= 13; i++) {
+					calculateSunQuiz = calculateSunQuiz + items[i];
+					limitSunQuiz = limitSunQuiz + done[i];
+				} 
+				if (limitSunQuiz < 5) { 
+					document.sunQuiz.gradeMsg.value = "Answer 5 before grading!";
+					document.sunQuiz.score.value = "incomplete"; 
+				} 
+				else {
+					document.sunQuiz.score.value = calculateSunQuiz;
+					if (calculateSunQuiz == 13) {
+						document.sunQuiz.gradeMsg.value = "PERFECT SCORE!";
+					}
+					else {document.sunQuiz.gradeMsg.value = "TRY AGAIN!";
+					}
+				} 
+			} 
+			function clearQuiz() { 
+				gradeMsg = 0;
+				for (i = 0; i <= 50; i++) {
+					items[i] = 0;
+					done[i] = 0;
+				}
+			} 
+		</script>
+		
+		<!-- End JavaScript for Quiz -->
+		
+	</head>
+	<body>
+		<img src="images/Sunny.png" class="center_img" width="310px" height="310px"/>
+		<h1 class="title">Sun Quiz</h1>
+		<p class="text">That's no moon. You're right, it's the sun! Take a quiz to see what else you know about it.</p>
+		
+		<!-- Begin Quiz -->
+		
+		<noscript>
+			<p>
+					Your browser needs to be able to run JavaScript in 
+					order to use the automatic correcting feature of the quiz. 
+					Typically, you can activate JavaScript using a dialog box
+					under the menu bar options in your internet browser. If your browser is enabled with
+					JavaScript, you will be able to have your answers corrected.
+			</p>
+		</noscript>
+		
+				<form name="sunQuiz">
+			<span class="text">
+				1. What are the dark spots on the sun called?
+				<br />
+			</span>
+			<blockquote>
+				<span class="text">
+					<input id="1a" type=radio name=query1 onClick="items[1]=0; done[1]=1">
+					<label for="1a">Dark matter</label>
+					<br />
+					<input id="1b" type=radio name=query1 onClick="items[1]=0; done[1]=1">
+					<label for="1b">Death stars</label>
+					<br />
+					<input id="1c" type=radio name=query1 onClick="items[1]=1; done[1]=1">
+					<label for="1c">Sunspots</label>
+					<br />
+					<input id="1d" type=radio name=query1 onClick="items[1]=0; done[1]=1">
+					<label for="1d">Eclipses</label>
+					<br />
+					<input id="1e" type=radio name=query1 checked onClick="items[1]=0; done[1]=0">
+					<label for="1e">Undecided</label>
+				</span>
+			</blockquote>
+			<span class="text">
+				2. What causes the dark spots on the sun?
+				<br />
+			</span>
+			<blockquote>
+				<span class="text">
+					<input id="2a" type=radio name=query2 onClick="items[2]=0; done[2]=1">
+					<label for="2a">Clearly, they are caused by aliens</label>
+					<br />
+					<input id="2b" type=radio name=query2 onClick="items[2]=0; done[2]=1">
+					<label for="2b">Giant craters</label>
+					<br />
+					<input id="2c" type=radio name=query2 onClick="items[2]=0; done[2]=1">
+					<label for="2c">Medium sized craters</label>
+					<br />
+					<input id="2d" type=radio name=query2 onClick="items[2]=1; done[2]=1">
+					<label for="2d">Magnetic activity causing a lower temperature in those areas</label>
+					<br />
+					<input id="2e" type=radio name=query2 checked onClick="items[2]=0; done[2]=0">
+					<label for="2e">Undecided</label>
+				</span>
+			</blockquote>
+			<span class="text">
+				3. What is 72% of the sun made of?
+				<br />
+			</span>
+			<blockquote>
+				<span class="text">
+					<input id="3a" type=radio name=query3 onClick="items[3]=0; done[3]=1">
+					<label for="3a">Lava</label>
+					<br />
+					<input id="3b" type=radio name=query3 onClick="items[3]=0; done[3]=1">
+					<label for="3b">Metal</label>
+					<br />
+					<input id="3c" type=radio name=query3 onClick="items[3]=0; done[3]=1">
+					<label for="3c">Water</label>
+					<br />
+					<input id="3d" type=radio name=query3 onClick="items[3]=1; done[3]=1">
+					<label for="3d">Hydrogen gas</label>
+					<br />
+					<input id="3e" type=radio name=query3 checked onClick="items[3]=0; done[3]=0">
+					<label for="3e">Undecided</label>
+				</span>
+			</blockquote>
+			<span class="text">
+				4. What is the Latin word for sun? 
+				<br />
+			</span>
+			<blockquote>
+				<span class="text">
+					<input id="4a" type=radio name=query4 onClick="items[4]=0; done[4]=1">
+					<label for="4a">Calidus</label>
+					<br />
+					<input id="4b" type=radio name=query4 onClick="items[4]=0; done[4]=1">
+					<label for="4b">Leviosa</label>
+					<br />
+					<input id="4c" type=radio name=query4 onClick="items[4]=1; done[4]=1">
+					<label for="4c">Sol</label>
+					<br />
+					<input id="4d" type=radio name=query4 onClick="items[4]=0; done[4]=1">
+					<label for="4d">Lux</label>
+					<br />
+					<input id="4e" type=radio name=query4 checked onClick="items[4]=0; done[4]=0">
+					<label for="4e">Undecided</label>
+				</span>
+			</blockquote>
+			<span class="text">
+				5. How many miles are there between the sun and the earth?
+				<br />
+			</span>
+			<blockquote>
+				<span class="text">
+					<input id="5a" type=radio name=query5 onClick="items[5]=0; done[5]=1">
+					<label for="5a">83,000,000 miles</label>
+					<br />
+					<input id="5b" type=radio name=query5 onClick="items[5]=1; done[5]=1">
+					<label for="5b">93,000,000 miles</label>
+					<br />
+					<input id="5c" type=radio name=query5 onClick="items[5]=0; done[5]=1">
+					<label for="5c">123,000,000,000 miles</label>
+					<br />
+					<input id="5d" type=radio name=query5 onClick="items[5]=0; done[5]=1">
+					<label for="5d">12,000 miles</label>
+					<br />
+					<input id="5e" type=radio name=query5 checked onClick="items[5]=0; done[5]=0">
+					<label for="5e">Undecided</label>
+				</span>
+			</blockquote>
+			<span class="text">
+				6. What is a solar flare? 
+			<br />
+			</span>
+			<blockquote>
+				<span class="text">
+					<input id="6a" type=radio name=query6 onClick="items[6]=0; done[6]=1">
+					<label for="6a">When the sun explodes</label>
+					<br />
+					<input id="6b" type=radio name=query6 onClick="items[6]=1; done[6]=1">
+					<label for="6b">A sudden release magnetic energy that has built up in the solar atmosphere</label>
+					<br />
+					<input id="6c" type=radio name=query6 onClick="items[6]=0; done[6]=1">
+					<label for="6c">When the sun implodes</label>
+					<br />
+					<input id="6d" type=radio name=query6 onClick="items[6]=0; done[6]=1">
+					<label for="6d">Nobody knows for certain</label>
+					<br />
+					<input id="6e" type=radio name=query6 checked onClick="items[6]=0; done[6]=0">
+					<label for="6e">Undecided</label>
+				</span>
+			</blockquote>
+			<span class="text">
+				7. How hot is the core of the sun? 
+			<br />
+			</span>
+			<blockquote>
+				<span class="text">
+					<input id="7a" type=radio name=query7 onClick="items[7]=1; done[7]=1">
+					<label for="7a">Around 27 million degrees fahrenheit</label>
+					<br />
+					<input id="7b" type=radio name=query7 onClick="items[7]=0; done[7]=1">
+					<label for="7b">Around 1 million degrees fahrenheit</label>
+  					<br />
+  					<input id="7c" type=radio name=query7 onClick="items[7]=0; done[7]=1">
+ 					<label for="7c">Around 12 thousand degrees fahrenheit</label>
+  					<br />
+  					<input id="7d" type=radio name=query7 onClick="items[7]=0; done[7]=1">
+  					<label for="7d">Not that hot, really</label>
+  					<br />
+  					<input id="7e" type=radio name=query7 checked onClick="items[7]=0; done[7]=0">
+  					<label for="7e">Undecided</label>
+  				</span>
+  			</blockquote>
+  			<span class="text">
+ 				8. How long does it take light to travel from the sun's surface to the
+ 				Earth?
+  				<br />
+  			</span>
+  			<blockquote>
+  				<span class="text">
+  					<input id="8a" type=radio name=query8 onClick="items[8]=0; done[8]=1">
+  					<label for="8a">About 1 year</label>
+  						<br />
+  					<input id="8b" type=radio name=query8 onClick="items[8]=0; done[8]=1">
+  					<label for="8b">About 1,000 years</label>
+  						<br />
+  					<input id="8c" type=radio name=query8 onClick="items[8]=0; done[8]=1">
+  					<label for="8c">About 3 hours</label>
+  					<br />
+  					<input id="8d" type=radio name=query8 onClick="items[8]=1; done[8]=1">
+  					<label for="8d">About 8 minutes</label>
+  					<br />
+  					<input id="8e" type=radio name=query8 checked onClick="items[8]=0; done[8]=0">
+  					<label for="8e">Undecided</label>
+  				</span>
+  			</blockquote>
+  			<span class="text">
+  				9. What does it mean when we say our solar system is "heliocentric"?
+  				<br />
+  			</span>
+  			<blockquote>
+  				<span class="text">
+  					<input id="9a" type=radio name=query9 onClick="items[9]=0; done[9]=1">
+  					<label for="9a">We have a sun. And it's great.</label>
+  					<br />
+  					<input id="9b" type=radio name=query9 onClick="items[9]=0; done[9]=1">
+  					<label for="9b">It would be pretty cold around here without the sun.</label>
+  					<br />
+  					<input id="9c" type=radio name=query9 onClick="items[9]=0; done[9]=1">
+  					<label for="9c">The sun is a star.</label>
+  					<br />
+  					<input id="9d" type=radio name=query9 onClick="items[9]=1; done[9]=1">
+  					<label for="9d">The sun is at the center of the universe and the planets revolve around it.</label>
+  					<br />
+  					<input id="9e" type=radio name=query9 checked onClick="items[9]=0; done[9]=0">
+  					<label for="9e">Undecided</label>
+  				</span>
+ 			</blockquote>
+  			<span class="text">
+  				10. How many times could the earth fit inside the sun?
+  				<br />
+  			</span>
+  			<blockquote>
+  				<span class="text">
+  					<input id="10a" type=radio name=query10 onClick="items[10]=0; done[10]=1">
+  					<label for="10a">About 1,800</label>
+  					<br />
+  					<input id="10b" type=radio name=query10 onClick="items[10]=0; done[10]=1">
+  					<label for="10b">About 1 zillion</label>
+  					<br />
+  					<input id="10c" type=radio name=query10 onClick="items[10]=1; done[10]=1">
+  					<label for="10c">About 1 million</label>
+  					<br />
+  					<input id="10d" type=radio name=query10 onClick="items[10]=0; done[10]=1">
+  					<label for="10d">About 100</label>
+  					<br />
+  					<input id="10e" type=radio name=query10 checked onClick="items[10]=0; done[10]=0">
+  					<label for="10e">Undecided</label>
+  				</span>
+ 			</blockquote>
+  			<span class="text">11. What life on Earth would survive if the sun disappeared? 
+  			<br />
+  			</span>
+  			<blockquote>
+  				<span class="text">
+  					<input id="11a" type=radio name=query11 onClick="items[11]=0; done[11]=1">
+  					<label for="11a">Plants but not animals</label>
+  					<br />
+  					<input id="11b" type=radio name=query11 onClick="items[11]=0; done[11]=1">
+  					<label for="11b">Animals but not plants</label>
+  					<br />
+  					<input id="11c" type=radio name=query11 onClick="items[11]=1; done[11]=1">
+  					<label for="11c">None</label>
+  					<br />
+  					<input id="11d" type=radio name=query11 onClick="items[11]=0; done[11]=1">
+  					<label for="11d">Only fish</label>
+  					<br />
+  					<input id="11e" type=radio name=query11 checked onClick="items[11]=0; done[11]=0">
+  					<label for="11e">Undecided</label>
+  				</span>
+  			</blockquote>
+  				<span class="text">
+  					12. What causes an eclipse?
+  					<br />
+  				</span>
+  				<blockquote>
+ 					<span class="text">
+  						<input id="12a" type=radio name=query12 onClick="items[12]=0; done[12]=1">
+  						<label for="12a">The sun temporarily cools down</label>
+  						<br />
+  						<input id="12b" type=radio name=query12 onClick="items[12]=1; done[12]=1">
+  						<label for="12b">The moon is between us and the sun</label>
+  						<br />
+  						<input id="12c" type=radio name=query12 onClick="items[12]=0; done[12]=1">
+  						<label for="12c">Clearly, it is caused by aliens</label>
+  						<br />
+  						<input id="12d" type=radio name=query12 onClick="items[12]=0; done[12]=1">
+  						<label for="12d">A storm on the sun's surface</label>
+  						<br />
+  						<input id="12e" type=radio name=query12 checked onClick="items[12]=0; done[12]=0">
+  						<label for="12e">Undecided</label>
+  					</span>
+  				</blockquote>
+  				<span class="text">
+  					13. What is the sun's circumference (its distance around)?
+  					<br />
+  				</span>
+  				<blockquote>
+  					<span class="text">
+  						<input id="13a" type=radio name=query13 onClick="items[13]=0; done[13]=1">
+  						<label for="13a">About 1,000,000 miles</label>
+  						<br />
+  						<input id="13b" type=radio name=query13 onClick="items[13]=1; done[13]=1">
+  						<label for="13b">About 2,713,406 miles</label>
+  						<br />
+  						<input id="13c" type=radio name=query13 onClick="items[13]=0; done[13]=1">
+  						<label for="13c">About 180,000 miles</label>
+  						<br />
+  						<input id="13d" type=radio name=query13 onClick="items[13]=0; done[13]=1">
+  						<label for="13d">About 122,000 miles</label>
+  						<br />
+  						<input id="13e" type=radio name=query13 checked onClick="items[13]=0; done[13]=0">
+  						<label for="13e">Undecided</label>
+  					</span>
+  				</blockquote>
+  			<p>
+  				<input type="button" class="text" onClick="gradeSunQuiz();" value="Grade">
+  				<br />
+  				<input name="gradeMsg" type="text" class="text" value="" size=25>
+  				<br /> 
+  				<span class="text">Points out of 13:</span> 
+  				<input name="score" type="text" class="text" value="" size=7>
+  				<br />
+				<input type="reset" class="text" onClick="clearQuiz();" value="Reset">
+  			</p>
+  			
+  			<!-- End Quiz -->
+		
+  		<p class="text">answers: sunspots, magnetic activity, hydrogen gas, sol, 93,000,000
+		miles, sudden release magnetic energy, 27 million degrees fahrenheit, 8
+		minutes, sun is at the center of the universe and the planets revolve
+		around it, 1 million, none, the moon is between us and the sun, 2,713,406
+		miles</p>
+		<p class="text"><a href="index.html">back to the home planet</a></p>
+  		<p class="copyright">Copyright www.nesproductions.com. All
+		material included in this website is, unless otherwise stated, the
+		property of www.nesproductions.com. Copyright and other intellectual
+		property laws protect these materials. Reproduction or retransmission of
+		the materials, in whole or in part, in any manner, without the prior written consent of the copyright holder, is a violation of copyright law.</p>
+	</body>
+</html>

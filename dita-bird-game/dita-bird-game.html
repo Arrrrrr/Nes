@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>DITA Bird</title>
+    <link rel="shortcut icon" href="data/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../n_style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    <link rel="stylesheet" type="text/css" href="gohomescreen.css">
+    <script src="js/gohomescreen.min.js"></script>
+  </head>
+  <body>
+    <!-- Canvas placeholder -->
+    <div id="screen"></div>
+    <!-- melonJS Library -->
+    <script type="text/javascript" src="js/melonJS-2.1.1-min.js"></script>
+    <script type="text/javascript" src="build/bunting-min.js" ></script>
+    <!-- Bootstrap & Mobile optimization tricks -->
+    <script type="text/javascript">
+      window.onReady(function onReady() {
+
+        game.onload();
+        // Mobile browser hacks
+        if (me.device.isMobile && !navigator.isCocoonJS) {
+          // Prevent the webview from moving on a swipe
+          window.document.addEventListener("touchmove", function (e) {
+            e.preventDefault();
+            window.scroll(0, 0);
+            return false;
+          }, false);
+
+          // Scroll away mobile GUI
+          (function () {
+            window.scrollTo(0, 1);
+            me.video.onresize(null);
+          }).defer();
+
+          me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
+            window.scrollTo(0, 1);
+          });
+        }
+      });
+    </script>
+    <p class="text"><a href="../index.html">Fly my monkeys, I mean, my DITA birds.</a></p>
+    <p class="text">I made this game using awesome source code and helpful a tutorial by Ellison Leao. Google 'clumsy bird' if you want to find it.</p>
+  </body>
+</html>

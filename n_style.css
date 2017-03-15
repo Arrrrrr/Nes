@@ -1,0 +1,122 @@
+/* An oracle spake unto me and said "One day, ye shall regreat this auto resize setting" */
+@media all and (max-device-width: 480px) {
+		table, figcaption, blockquote, div {
+			-webkit-text-size-adjust:200%;
+ 			-ms-text-size-adjust:200%;
+ 			-moz-text-size-adjust:200%;
+ 			text-size-adjust:200%;
+		}
+	}
+
+.title {
+    font-size: 36px;
+    font-family: consolas, "Lucida Console", Monaco, monospace;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-family: consolas, "Lucida Console", Monaco, monospace;
+    text-align: center;
+}
+
+.text {
+    font-size: 16px;
+    font-family: consolas, "Lucida Console", Monaco, monospace;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+a:active {
+    text-decoration: underline;
+    color: blue;
+}
+
+td.homepage {
+    padding-left: 150px;
+    border-bottom-style: dotted;
+}
+
+figcaption {    
+    font-size: 16px;
+    font-family: consolas, "Lucida Console", Monaco, monospace;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+td.h_head {
+   vertical-align: top;
+   margin-top: 0px;
+   border-bottom-style: dotted;
+}
+
+h2 {
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+table { 
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+/* styles for when i put links in a table; not currently in use, consider deleting */
+.tablelinklist {
+    border: 1px dashed;
+    border-collapse:collapse; 
+    font-size: 16px;
+    font-family: consolas, "Lucida Console", Monaco, monospace;
+    width: 80%;
+    
+}
+
+.tablelinklist td, th {
+    border: 1px dashed;
+    border-collapse:collapse; 
+    padding: 5px 5px 5px 5px;
+} 
+
+.tablelinklist th {
+    background-color: #E6E6E6;
+}
+
+.copyright {
+    font-size: 11px;
+    font-family: consolas, "Lucida Console", Monaco, monospace;
+    bottom: 0;
+}
+
+.center_img  {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; 
+    height: auto;
+}
+
+/* This one was a bugger */
+.fun_img {
+    display: block;
+    margin-left: auto;
+	margin-right: 0px;
+    max-width: 100%; 
+    height: auto;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+}

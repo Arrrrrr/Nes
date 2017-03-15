@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Choose your destiny. Flawless. Victory</title>
+		<script>
+			function dragonEncounter()
+				{
+					var WhatToDo = prompt("How do you respond to the dragon?", "Options: fight, hug, inspect, steal");
+					WhatToDo = WhatToDo.toLowerCase();
+					switch (WhatToDo) {
+					case "fight" :
+						document.getElementById("message").innerHTML = "Goody two shoes Griffyndor.";
+						break;
+					case "hug" :
+						document.getElementById("message").innerHTML = "Sissy pants Hufflepuff.";
+						break;
+					case "inspect" :
+						document.getElementById("message").innerHTML = "Nerd Ravenclaw.";
+						break;
+					case "steal" :
+						document.getElementById("message").innerHTML = "Mu wah hah hah: Slytherin!!!";
+						break;
+					default :
+						document.getElementById("message").innerHTML = "I guess you are not a wizard after all. My snake will now eat you Muggle.";
+					}
+					
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="n_style.css"> 
+	</head>
+	<body>
+    	<p class="text">Which Hogwart's house do you belong in?</p>
+		<button onclick="dragonEncounter()">Oh look! A dragon. What do you do?</button>
+		<p class="text" id="message"></p>
+        <p class="text"><a href="pointless-javascript.html">Back to the pointless page</a></p>
+        <p class="copyright">Copyright www.nesproductions.com. All
+		material included in this website is, unless otherwise stated, the
+		property of www.nesproductions.com. Copyright and other intellectual
+		property laws protect these materials. Reproduction or retransmission of
+		the materials, in whole or in part, in any manner, without the prior written consent of the copyright holder, is a violation of copyright law.</p>
+	</body>
+</html> 

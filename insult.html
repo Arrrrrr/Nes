@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Return an insult</title>
+		<script>
+			function mean() {
+				var person = prompt("Hey poop sucker! Enter a name here.", "Annoying person");
+				var insult = prompt("Hey bilgewater licker! Enter an insult here.", "Horrid insult");
+				if (insult != null) {
+        			document.getElementById("meanwords").innerHTML = person + " is a " + insult;
+    			}
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="n_style.css"> 
+	</head>
+	<body>
+		<button onclick="mean()">Insult someone</button>
+		<p class="text" id="meanwords"></p>
+		<p class="text"><a href="pointless-javascript.html">Back to the pointless page</a></p>
+        <p class="copyright">Copyright www.nesproductions.com. All
+		material included in this website is, unless otherwise stated, the
+		property of www.nesproductions.com. Copyright and other intellectual
+		property laws protect these materials. Reproduction or retransmission of
+		the materials, in whole or in part, in any manner, without the prior written consent of the copyright holder, is a violation of copyright law.</p>
+    </body>
+</html>
